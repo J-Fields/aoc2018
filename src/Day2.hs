@@ -4,7 +4,7 @@ import Data.List
 
 hasOccurrences :: Eq a => Int -> [a] -> Bool
 hasOccurrences numOcc word =
-    any id [length (filter (== c) word) == numOcc | c <- (nub word)]
+    or [length (filter (== c) word) == numOcc | c <- nub word]
 
 checksum :: [String] -> Int
 checksum [] = 0
